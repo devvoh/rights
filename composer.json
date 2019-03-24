@@ -1,0 +1,31 @@
+{
+  "name": "parable-php/rights",
+  "type": "library",
+  "description": "Parable Rights is a simple bitmask-based rights system",
+  "keywords": ["library", "micro", "rights", "acl", "bitmask", "parable"],
+  "homepage": "https://github.com/parable-php/rights",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Robin de Graaf",
+      "email": "hello@devvoh.com",
+      "homepage": "https://devvoh.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Parable\\Rights\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Parable\\Rights\\Tests\\": "tests"
+    }
+  }
+}
