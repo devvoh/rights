@@ -4,8 +4,9 @@ namespace Parable\Rights\Tests;
 
 use Parable\Rights\Exception;
 use Parable\Rights\Rights;
+use PHPUnit\Framework\TestCase;
 
-class RightsTest extends \PHPUnit\Framework\TestCase
+class RightsTest extends TestCase
 {
     /**
      * @var Rights
@@ -22,7 +23,7 @@ class RightsTest extends \PHPUnit\Framework\TestCase
 
     }
 
-    public function testAddAndGetRight()
+    public function testAddAndGetRight(): void
     {
         $rights = new Rights();
 
@@ -33,7 +34,7 @@ class RightsTest extends \PHPUnit\Framework\TestCase
         self::assertSame(1, $rights->get('create'));
     }
 
-    public function testCannotAddSameRightTwice()
+    public function testCannotAddSameRightTwice(): void
     {
         $this->expectException(Exception::class);
         $this->expectExceptionMessage("Cannot redefine right with name 'create'");
@@ -43,7 +44,7 @@ class RightsTest extends \PHPUnit\Framework\TestCase
         $rights->add('create');
     }
 
-    public function testAddAndGetMultipleRights()
+    public function testAddAndGetMultipleRights(): void
     {
         $rights = new Rights();
 
@@ -60,7 +61,7 @@ class RightsTest extends \PHPUnit\Framework\TestCase
         self::assertSame(8, $rights->get('delete'));
     }
 
-    public function testGetAll()
+    public function testGetAll(): void
     {
         self::assertSame(
             [
@@ -73,7 +74,7 @@ class RightsTest extends \PHPUnit\Framework\TestCase
         );
     }
 
-    public function testCheck()
+    public function testCheck(): void
     {
         self::assertTrue($this->rights->can('1111', 'create'));
         self::assertTrue($this->rights->can('1111', 'read'));
@@ -96,12 +97,12 @@ class RightsTest extends \PHPUnit\Framework\TestCase
         self::assertTrue($this->rights->can('1001', 'delete'));
     }
 
-    public function testCombine()
+    public function testCombine(): void
     {
         self::assertSame('10101', $this->rights->combine('00001', '10000', '00100'));
     }
 
-    public function testGetNames()
+    public function testGetNames(): void
     {
         self::assertSame(
             ['create', 'read', 'update', 'delete'],
@@ -109,13 +110,13 @@ class RightsTest extends \PHPUnit\Framework\TestCase
         );
     }
 
-    public function testGetRightsFromNames()
+    public function testGetRightsFromNames(): void
     {
         self::assertSame('0011', $this->rights->getRightsFromNames('read', 'create'));
         self::assertSame('1010', $this->rights->getRightsFromNames('read', 'delete'));
     }
 
-    public function testGetNamesFromRights()
+    public function testGetNamesFromRights(): void
     {
         self::assertSame(['create', 'read'], $this->rights->getNamesFromRights('0011'));
         self::assertSame(['read', 'delete'], $this->rights->getNamesFromRights('1010'));
