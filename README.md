@@ -1,11 +1,8 @@
-# Parable Rights
+# Rights
 
-[![Build Status](https://travis-ci.org/parable-php/rights.svg?branch=master)](https://travis-ci.org/parable-php/rights)
-[![Latest Stable Version](https://poser.pugx.org/parable-php/rights/v/stable)](https://packagist.org/packages/parable-php/rights)
-[![Latest Unstable Version](https://poser.pugx.org/parable-php/rights/v/unstable)](https://packagist.org/packages/parable-php/rights)
 [![License](https://poser.pugx.org/parable-php/rights/license)](https://packagist.org/packages/parable-php/rights)
 
-Parable Rights is a simple bitmask-based rights system, using binary strings to represent rights. This allows for easy storage and fast handling.
+Rights is a simple bitmask-based rights system, using binary strings to represent rights. This allows for easy storage and fast handling.
 
 ## Install
 
@@ -57,4 +54,4 @@ Any suggestions, bug reports or general feedback is welcome. Use github issues a
 
 ## License
 
-All Parable components are open-source software, licensed under the MIT license.
+Rights is licensed under the MIT license.
